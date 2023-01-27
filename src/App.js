@@ -12,7 +12,6 @@ function App() {
   const [wod, setWod] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(wod);
   const generateWod = async () => {
     const chatGptMessage = `Create a ${difficulty} wod for me`;
 

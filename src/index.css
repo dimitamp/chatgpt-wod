@@ -1,12 +1,13 @@
-
 @import 'normalize.css';
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
 
-:root { 
+:root {
   --black: #222222;
   --teal: #22A39F;
   --grey: #434242;
@@ -14,79 +15,120 @@
   --header-height: 100px;
 }
 
-.container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--black)
- }
-
- .header {
-   height: var(--header-height);
-   display: flex;
-   justify-content: center;
-   padding: 20px;
- }
-
-.brand { 
-  color: var(--beige);
-  font-size: 100px;
-  font-weight: bold;
-  letter-spacing: 5px;
+body {
+  margin: 0;
+  background-color: var(--black);
 }
 
-.main { 
-  padding: 20px;
-  height: calc(100vh - var(--header-height));
+.container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.brand {
+  color: var(--beige);
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-align: center
+}
+
+.main {
+  margin-top: 2rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 4rem;
 }
 
-.actions { 
-  margin-top: 200px;
+.actions {
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
 
-.generate { 
-  margin-top: 100px;
+.generate {
   margin-inline: auto;
 }
 
-.difficulties { 
-  display: flex; 
-  gap: 100px;
+.difficulties {
+  display: flex;
+  gap: 4rem;
 }
 
-button { 
+button {
   cursor: pointer;
   background-color: Transparent;
   border: 1px solid var(--teal);
   border-radius: 30px;
   color: var(--teal);
-  font-size: 30px;
-  padding: 15px;
+  font-size: 1.5rem;
+  padding: 1.2rem;
 }
 
-button:hover, button.active { 
+pre { 
+  white-space: pre-wrap;       /* css-3 */
+}
+
+button:hover,
+button.active {
   color: var(--beige);
   border-color: var(--beige);
 }
 
 .wod {
-  margin-top: 200px;
-  padding: 20px;
+  padding: 2rem;
   border-radius: 20px;
   border: 1px solid var(--teal);
-  width: clamp(300px, 90vw, 800px);
+  width: 80vw;
+  max-width: 800px;
   color: var(--beige);
-  font-size: 20px;
+  font-size: 1.8rem;
 }
 
-.loading { 
-  margin-top: 300px;
+@media screen and (max-width: 1000px){
+  :root { 
+    font-size: 12px;
+  }
+
+  .loading span > span { 
+    width: 22px !important;
+    height: 22px !important;
+  }
+}
+
+
+@media screen and (max-width: 500px){
+  :root { 
+    font-size: 10px;
+  }
+
+  .brand { 
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+
+  button { 
+    font-size: 1.2rem;
+  }
+
+  .wod { 
+    font-size: 1.4rem;
+  }
+
+  .loading span > span { 
+    width: 15px !important;
+    height: 15px !important;
+  }
 }
